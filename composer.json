@@ -30,6 +30,7 @@
         }
     ],
     "require": {
+        "composer/installers": "~1.0",
         "drupal/feeds": "^3.0@alpha",
         "drupal/charts": "4.x",
         "drupal/data": "^1.0@alpha",
