@@ -1,0 +1,223 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.monetization_billing_report.field_api_product
+    - field.field.node.monetization_billing_report.field_charged_rate
+    - field.field.node.monetization_billing_report.field_currency
+    - field.field.node.monetization_billing_report.field_developer_email
+    - field.field.node.monetization_billing_report.field_developer_id
+    - field.field.node.monetization_billing_report.field_developer_name
+    - field.field.node.monetization_billing_report.field_monetization_billing_month
+    - field.field.node.monetization_billing_report.field_monetization_billing_year
+    - field.field.node.monetization_billing_report.field_monetization_package
+    - field.field.node.monetization_billing_report.field_package_id
+    - field.field.node.monetization_billing_report.field_product_id
+    - field.field.node.monetization_billing_report.field_provider_status
+    - field.field.node.monetization_billing_report.field_tax_on_rate
+    - field.field.node.monetization_billing_report.field_total_volume
+    - field.field.node.monetization_billing_report.field_transaction_type
+    - node.type.monetization_billing_report
+  module:
+    - node
+id: monetization_billing_report
+label: 'Monetization Billing Report'
+description: ''
+help: ''
+import_period: -1
+fetcher: upload
+fetcher_configuration:
+  allowed_extensions: 'txt csv tsv xml opml'
+  directory: 'private://feeds/monetization_billing_reports'
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  langcode: en
+  update_existing: 0
+  update_non_existent: _keep
+  expire: -1
+  owner_feed_author: false
+  owner_id: 0
+  authorize: true
+  skip_hash_check: false
+  values:
+    type: monetization_billing_report
+custom_sources:
+  monetization_package:
+    label: 'Monetization Package'
+    value: 'Monetization Package'
+    machine_name: monetization_package
+  package_id:
+    label: 'Package ID'
+    value: 'Package ID'
+    machine_name: package_id
+  api_product:
+    label: 'API Product'
+    value: 'API Product'
+    machine_name: api_product
+  product_id:
+    label: 'Product ID'
+    value: 'Product ID'
+    machine_name: product_id
+  developer_name:
+    label: 'Developer Name'
+    value: 'Developer Name'
+    machine_name: developer_name
+  developer_id:
+    label: 'Developer ID'
+    value: 'Developer ID'
+    machine_name: developer_id
+  currency:
+    label: Currency
+    value: Currency
+    machine_name: currency
+  transaction_type:
+    label: 'Transaction Type'
+    value: 'Transaction Type'
+    machine_name: transaction_type
+  provider_status:
+    label: 'Provider Status'
+    value: 'Provider Status'
+    machine_name: provider_status
+  total_volume:
+    label: 'Total Volume'
+    value: 'Total Volume'
+    machine_name: total_volume
+  charged_rate:
+    label: 'Charged Rate'
+    value: 'Charged Rate'
+    machine_name: charged_rate
+  tax_on_rate:
+    label: 'Tax on Rate'
+    value: 'Tax on Rate'
+    machine_name: tax_on_rate
+  developer_email:
+    label: 'Developer Email'
+    value: 'Developer Email'
+    machine_name: developer_email
+  '':
+    label: ''
+    value: ''
+    machine_name: ''
+mappings:
+  -
+    target: field_monetization_package
+    map:
+      value: monetization_package
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_package_id
+    map:
+      value: package_id
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_api_product
+    map:
+      value: api_product
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_product_id
+    map:
+      value: product_id
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_developer_name
+    map:
+      value: developer_name
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_developer_id
+    map:
+      value: developer_id
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_currency
+    map:
+      value: currency
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_transaction_type
+    map:
+      value: transaction_type
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_provider_status
+    map:
+      value: provider_status
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_total_volume
+    map:
+      value: total_volume
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_charged_rate
+    map:
+      value: charged_rate
+    settings:
+      language: null
+  -
+    target: field_tax_on_rate
+    map:
+      value: tax_on_rate
+    settings:
+      language: null
+  -
+    target: field_developer_email
+    map:
+      value: developer_email
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: title
+    map:
+      value: developer_name
+    unique: {  }
+    settings:
+      language: ''
+  -
+    target: field_monetization_billing_month
+    map:
+      value: 'parent:field_monetization_billing_month'
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: field_monetization_billing_year
+    map:
+      value: 'parent:field_monetization_billing_year'
+    unique: {  }
+    settings:
+      language: null
+  -
+    target: created
+    map:
+      value: 'parent:field_report_date_month'
+    settings:
+      language: null
+      timezone: UTC

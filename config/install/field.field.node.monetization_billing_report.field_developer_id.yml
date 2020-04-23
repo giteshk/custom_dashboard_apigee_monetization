@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_developer_id
+    - node.type.monetization_billing_report
+id: node.monetization_billing_report.field_developer_id
+field_name: field_developer_id
+entity_type: node
+bundle: monetization_billing_report
+label: 'Developer ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

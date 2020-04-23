@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.monetization_billing_report
+    - field.storage.feeds_feed.field_monetization_billing_year
+id: feeds_feed.monetization_billing_report.field_monetization_billing_year
+field_name: field_monetization_billing_year
+entity_type: feeds_feed
+bundle: monetization_billing_report
+label: 'Monetization Billing Year'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 2020
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

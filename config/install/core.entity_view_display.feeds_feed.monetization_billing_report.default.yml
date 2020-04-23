@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.monetization_billing_report
+    - field.field.feeds_feed.monetization_billing_report.field_monetization_billing_month
+    - field.field.feeds_feed.monetization_billing_report.field_monetization_billing_year
+    - field.field.feeds_feed.monetization_billing_report.field_report_date_month
+  module:
+    - datetime
+    - feeds
+    - options
+    - user
+id: feeds_feed.monetization_billing_report.default
+targetEntityType: feeds_feed
+bundle: monetization_billing_report
+mode: default
+content:
+  field_monetization_billing_month:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_monetization_billing_year:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_report_date_month:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  imported:
+    label: inline
+    type: timestamp_ago
+    weight: 1
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  next:
+    label: inline
+    type: timestamp
+    weight: 1
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  source:
+    label: inline
+    type: feeds_uri_link
+    weight: -3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

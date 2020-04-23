@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - feeds.feed_type.monetization_billing_report
+    - field.storage.feeds_feed.field_report_date_month
+  module:
+    - datetime
+id: feeds_feed.monetization_billing_report.field_report_date_month
+field_name: field_report_date_month
+entity_type: feeds_feed
+bundle: monetization_billing_report
+label: 'Report Date Month'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

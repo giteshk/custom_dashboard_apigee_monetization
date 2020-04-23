@@ -1,0 +1,92 @@
+langcode: en
+status: true
+dependencies: {  }
+id: update_author_on_updating_monetization_billing_report
+label: 'Update author on updating Monetization billing report'
+events:
+  -
+    event_name: 'rules_entity_insert:node'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: 9b3b6fdb-c3b8-4a94-858a-a325e36aa326
+  conditions:
+    id: rules_and
+    uuid: 05f0e644-e0d8-47b5-a2a2-2543bea0d5f5
+    conditions:
+      -
+        id: rules_condition
+        uuid: 9bcbfe05-48cc-4359-87ed-69fd7261f088
+        context_values:
+          type: node
+        context_mapping:
+          entity: node
+        context_processors:
+          type:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        condition_id: rules_entity_is_of_type
+        negate: false
+      -
+        id: rules_condition
+        uuid: 1a57837a-8360-4a21-874e-1e8490d503bd
+        context_values:
+          field: field_developer_email
+        context_mapping:
+          entity: node
+        context_processors:
+          field:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        condition_id: rules_entity_has_field
+        negate: false
+      -
+        id: rules_condition
+        uuid: 1ada0bb4-d2a5-493a-990c-12c5c159bf27
+        context_values:
+          type: node
+          bundle: monetization_billing_report
+        context_mapping:
+          entity: node
+        context_processors:
+          type:
+            rules_tokens: {  }
+          bundle:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        condition_id: rules_entity_is_of_bundle
+        negate: false
+  actions:
+    id: rules_action_set
+    uuid: ee67b82c-e581-4c5a-a2f2-816d79c9c3ae
+    actions:
+      -
+        id: rules_action
+        uuid: 868c403a-4883-4263-b28b-ab66175241a2
+        context_values:
+          type: user
+          field_name: mail
+          limit: '1'
+        context_mapping:
+          field_value: node.field_developer_email.value
+        context_processors:
+          type:
+            rules_tokens: {  }
+          field_name:
+            rules_tokens: {  }
+          limit:
+            rules_tokens: {  }
+        provides_mapping: {  }
+        action_id: rules_entity_fetch_by_field
+      -
+        id: rules_action
+        uuid: 408b1a4b-82bc-44bf-b72b-8b61349bd785
+        context_values: {  }
+        context_mapping:
+          data: node.uid
+          value: entity_fetched
+        context_processors: {  }
+        provides_mapping: {  }
+        action_id: rules_data_set

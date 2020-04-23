@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_monetization_billing_month
+    - node.type.monetization_billing_report
+  module:
+    - options
+id: node.monetization_billing_report.field_monetization_billing_month
+field_name: field_monetization_billing_month
+entity_type: node
+bundle: monetization_billing_report
+label: 'Monetization Billing month'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,0 +1,40 @@
+{
+    "name": "giteshk/custom_dashboard_apigee_monetization",
+    "description": "Custom Dashboard for Apigee Monetization",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "google/charts",
+                "version": "45",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "google_charts"
+                },
+                "dist": {
+                    "url": "https://www.gstatic.com/charts/loader.js",
+                    "type": "file"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        }
+    ],
+    "authors": [
+        {
+            "name": "Gitesh Koli",
+            "email": "gkoli@google.com"
+        }
+    ],
+    "require": {
+        "drupal/feeds": "^3.0@alpha",
+        "drupal/charts": "4.x",
+        "drupal/data": "^1.0@alpha",
+        "drupal/rules": "^3.0@alpha",
+        "google/charts": "45",
+        "drupal/features": "^3.8"
+    }
+}

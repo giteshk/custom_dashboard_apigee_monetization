@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.monetization_billing_report.feeds_item
+    - field.field.node.monetization_billing_report.field_api_product
+    - field.field.node.monetization_billing_report.field_charged_rate
+    - field.field.node.monetization_billing_report.field_currency
+    - field.field.node.monetization_billing_report.field_developer_email
+    - field.field.node.monetization_billing_report.field_developer_id
+    - field.field.node.monetization_billing_report.field_developer_name
+    - field.field.node.monetization_billing_report.field_monetization_billing_month
+    - field.field.node.monetization_billing_report.field_monetization_billing_year
+    - field.field.node.monetization_billing_report.field_monetization_package
+    - field.field.node.monetization_billing_report.field_package_id
+    - field.field.node.monetization_billing_report.field_product_id
+    - field.field.node.monetization_billing_report.field_provider_status
+    - field.field.node.monetization_billing_report.field_tax_on_rate
+    - field.field.node.monetization_billing_report.field_total_volume
+    - field.field.node.monetization_billing_report.field_transaction_type
+    - node.type.monetization_billing_report
+  module:
+    - user
+id: node.monetization_billing_report.teaser
+targetEntityType: node
+bundle: monetization_billing_report
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  feeds_item: true
+  field_api_product: true
+  field_charged_rate: true
+  field_currency: true
+  field_developer_email: true
+  field_developer_id: true
+  field_developer_name: true
+  field_monetization_billing_month: true
+  field_monetization_billing_year: true
+  field_monetization_package: true
+  field_package_id: true
+  field_product_id: true
+  field_provider_status: true
+  field_tax_on_rate: true
+  field_total_volume: true
+  field_transaction_type: true

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_total_volume
+    - node.type.monetization_billing_report
+id: node.monetization_billing_report.field_total_volume
+field_name: field_total_volume
+entity_type: node
+bundle: monetization_billing_report
+label: 'Total Volume'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
