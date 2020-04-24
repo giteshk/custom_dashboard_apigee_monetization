@@ -1,1 +1,20 @@
-r//equired: true
+required:
+  - field.storage.feeds_feed.field_monetization_billing_month
+  - field.storage.feeds_feed.field_monetization_billing_year
+  - field.storage.feeds_feed.field_report_date_month
+  - field.storage.node.feeds_item
+  - field.storage.node.field_api_product
+  - field.storage.node.field_charged_rate
+  - field.storage.node.field_currency
+  - field.storage.node.field_developer_email
+  - field.storage.node.field_developer_id
+  - field.storage.node.field_developer_name
+  - field.storage.node.field_monetization_billing_month
+  - field.storage.node.field_monetization_billing_year
+  - field.storage.node.field_monetization_package
+  - field.storage.node.field_package_id
+  - field.storage.node.field_product_id
+  - field.storage.node.field_provider_status
+  - field.storage.node.field_tax_on_rate
+  - field.storage.node.field_total_volume
+  - field.storage.node.field_transaction_type

@@ -13,3 +13,4 @@ dependencies:
   - rules
   - user
   - views
+core_incompatible: false
